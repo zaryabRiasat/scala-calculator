@@ -1,0 +1,24 @@
+<configuration>
+    <appender name="ScalaStyle" class="ch.qos.logback.core.FileAppender">
+        <File>style/style.log</File>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %r [%thread] %logger{0} %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %r [%thread] %logger{0} %level - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="calLogger" level="debug" additivity="false">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ScalaStyle"/>
+    </logger>
+
+    <root level="debug">
+        <appender-ref ref="ScalaStyle"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
