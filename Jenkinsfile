@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'sbt compile'
+                sh 'sbt'
+                sh 'compile'
             }
         }
     }
